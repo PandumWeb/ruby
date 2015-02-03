@@ -1,0 +1,22 @@
+# == Schema Information
+# Schema version: <timestamp>
+#
+# Table nom: users
+#
+#  id         :integer         not null, primary key
+#  nom       :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+class User < ActiveRecord::Base
+  # attr_accessible :nom, :email
+
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :nom,  :presence => true,
+                    :length   => { :maximum => 50 }
+  validates :email, :presence => true,
+                    :format   => { :with => email_regex }
+end
