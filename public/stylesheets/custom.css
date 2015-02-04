@@ -3,5 +3,8 @@
   text-decoration: none;
   bottom: 0;
   padding: 10px;
+}
 
+#errors li{
+	display: block;
 }
