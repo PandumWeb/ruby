@@ -11,24 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20150204075620) do
-=======
-ActiveRecord::Schema.define(version: 20150203183925) do
->>>>>>> modeling-users
+
 
   create_table "users", force: :cascade do |t|
     t.string   "nom"
     t.string   "email"
-<<<<<<< HEAD
+
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "encrypted_password"
     t.string   "salt"
-=======
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> modeling-users
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

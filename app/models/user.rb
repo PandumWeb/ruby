@@ -11,7 +11,7 @@
 #
 
 class User < ActiveRecord::Base
-<<<<<<< HEAD
+
 	 attr_accessor :password
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
       Digest::SHA2.hexdigest(string)
     end
 
-=======
+
   # attr_accessible :nom, :email
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -73,5 +73,5 @@ class User < ActiveRecord::Base
                     :length   => { :maximum => 50 }
   validates :email, :presence => true,
                     :format   => { :with => email_regex }
->>>>>>> modeling-users
+
 end
