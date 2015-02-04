@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :users
+<<<<<<< HEAD
+=======
+  get 'users/new'
+
+>>>>>>> modeling-users
   get 'signup', to: 'users#new'
 
   get 'contact', to: 'pages#contact'
