@@ -4,6 +4,8 @@
             <li role="presentation" class="active"><%= link_to "Accueil", root_path %></li>
             <li role="presentation"><%= link_to "Aide", help_path %></li>
             <% if signed_in? %>
+                <li><%= link_to "Membres", users_path %></li>
+                <li><%= link_to "Modifier", edit_user_path(current_user) %></li>
 			    <li><%= link_to "Déconnexion", signout_path, :method => :delete %></li>
 			    <% else %>
 			    <li><%= link_to "S'identifier", signin_path %></li>
