@@ -13,6 +13,8 @@
 class User < ActiveRecord::Base
 
 	 attr_accessor :password
+   
+    has_many :microposts, :dependent => :destroy
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -44,6 +46,12 @@ class User < ActiveRecord::Base
     return nil  if user.nil?
     return user if user.has_password?(submitted_password)
   end
+
+  def feed
+    # C'est un préliminaire. Cf. chapitre 12 pour l'implémentation complète.
+    Micropost.where("user_id = ?", id)
+  end
+  
 
    private
 

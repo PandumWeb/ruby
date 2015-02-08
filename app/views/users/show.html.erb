@@ -4,12 +4,21 @@
 		<div class="col-md-6">
 			<%= gravatar_for @user %>			
 		</div>
-		<div class="col-md-6">
+			<div class="col-md-6">
 			<div class="col-md-offset-6">
 				<p>Nom:<%= @user.nom %></p>  
 				<p><%= link_to "Profil", user_path(@user) %></p> 
+				<p>Message: <%= @user.microposts.count %></p> 
 			</div>
 		</div>
+		<div class="col-md-12">
+		  <% unless @user.microposts.empty? %>	
+          <%= render @microposts %>
+     
+        <%= will_paginate @microposts %>
+      <% end %>
+  </div>
+	
 	</div>
 </div>
 

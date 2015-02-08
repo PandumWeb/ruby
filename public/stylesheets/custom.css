@@ -9,3 +9,10 @@
 	display: block;
 }
 
+.btn-danger{
+	margin: 6px 0px 0px 0px;
+}
+
+p .text{
+	font-size:5px;
+}

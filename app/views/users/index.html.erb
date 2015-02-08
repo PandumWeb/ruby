@@ -1,22 +1,24 @@
 <div class="jumbotron">
-<h1>Tous les utilisateurs</h1>
+<h2>Tous les utilisateurs</h2>
 <div class="container">
 <ul class="members">
 
   <% @users.each do |user| %>
  <div class="col-md-6">
     <li>
+  <%= gravatar_for user, :size => 50 %>
+  <%= link_to user.nom, user %>
+  <% if current_user.admin? %>
+   <%= button_to "Supprimer", user, :confirm => "Etes-vous certain?",
+                                :title => "Supprimer #{user.nom}", :method => :delete,:class => "btn btn-danger" %>
 
-      <%= gravatar_for user, :size => 50 %>
-      <%= link_to user.nom, user %>
-       <% if current_user.admin? %>
-  | <%= link_to "supprimer", user, :method => :delete, :confirm => "Etes-vous certain?",:title => "Supprimer #{user.nom}" %>
-       <% end %>
-    </li>
+  <% end %>
+</li>
  </div>
   <% end %>
-
+ 
 </ul>
+
 <%= will_paginate %>
 </div>
 </div>

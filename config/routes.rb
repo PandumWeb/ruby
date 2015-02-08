@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-
+  resources :microposts, :only => [:create, :destroy]
   get 'signup', to: 'users#new'
 
   get 'signin', to: 'sessions#new'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'help', to: 'pages#help'
 
    root to: 'pages#home'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

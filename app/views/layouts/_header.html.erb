@@ -1,7 +1,7 @@
 <header>  
    <nav>
         <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><%= link_to "Accueil", root_path %></li>
+            <li role="presentation"><%= link_to "Accueil", root_path %></li>
             <li role="presentation"><%= link_to "Aide", help_path %></li>
             <% if signed_in? %>
                 <li><%= link_to "Membres", users_path %></li>
