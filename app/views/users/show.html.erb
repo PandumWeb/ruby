@@ -2,7 +2,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
-			<%= gravatar_for @user %>			
+			<%= gravatar_for @user %>
+			<%= render 'follow_form' if signed_in? %>		
 		</div>
 			<div class="col-md-6">
 			<div class="col-md-offset-6">
